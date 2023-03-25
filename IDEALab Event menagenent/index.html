@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    
+ <ul class="logo navigation_panel">
+        <li><img src="logoIdeaLab.png" alt="" style="float: left" width="150px">
+            <h2><b>AICTE-IDEA Labs Network</b></h2>
+        </li>
+    </ul> 
+    <nav>
+        <ul class="ul1 navigation_panel">
+            <li><a href="index.html" style="float: left">Home</a></li>
+            <li><a href="about_idealab.html" style="float: left">About Idealab</a></li>
+            <li><a href="news_latter.html" style="float: left">News-Letter</a></li>
+            <li><a href="event.html" style="float: left">Events</a></li>
+            <li><a href="Equipments_List.html" style="float: left">Equipments List</a></li>
+            <li><select class="n_panel" id="cars" name="program" style="float:left" size="1" onchange="window.location.href=this.value;" required>
+                    <option value="select" class="input-box">Participant Register</option>
+                    <option value="reg_alumni.html" class="input-box" a href="reg_alumni.html">Alumni</a></option>
+                    <option value="reg_student.html" class="input-box"><a href="reg_student.html">Student</a></option>
+                    <option value="reg_other_institute_student.html" class="input-box"><a href="reg_other_student.html">Other
+                            Institute Student</a></option>
+                    <option value="reg-school-learner.html" class="input-box"><a href="reg-school-learner.html">School
+                            Learners</a></option>
+                    <option value="reg_school_teacher.html" class="input-box"><a href="reg_school_teacher.html">School
+                            Teachers</a></option>
+                    <option value="reg_other_institute_faculty.html" class="input-box"><a
+                            href="reg_other_institute_faculty.html">Other Institute Faculty</a></option>
+                    <option value="reg_industry.html" class="input-box"><a href="reg_industry.html">Industry</a></option>
+                    <option value="reg_entrepreneur.html"class="input-box">
+                            <a href="reg_alumni.html">Entrepreneur/start-up</a></option>
+                </select></li>
+            <li><a href="scheme_document.html" style="float: left">Scheme Document</a></li>
+            <li><select class="n_panel" size="1" onchange="window.location.href=this.value;" style="float:right" name="login" id="---" required>
+                    <option value="select" class="input-box" selected>Login</option>
+                    <option value="login_main.php" class="input-box"><a href="#">Admin</a></option>
+                    <option value="login_coordinator.php" class="input-box"><a
+                            href="reg_entrepreneur_startup.html">Co-ordinator</a></option>
+                </select></li>
+            <li><a href="reg_coordinator.html"  style="float:right">Cordinator Register</a></li>
+        </ul>
+    </nav>
+
+    <div class="w3-content w3-section w3-display-container" style="max-width:100%">
+        <img class="mySlides w3-animate-left" src="newslider1 (1).jpg" style="width: 100%;">
+        <img class="mySlides w3-animate-left" src="newslider2.jpg" style="width: 100%;">
+        <img class="mySlides w3-animate-left" src="newslider3.jpg" style="width: 100%;">
+        <div class="w3-center w3-container w3-section w3-large w3-text-black w3-display-bottommiddle"
+            style="width:100% ;">
+            <div class="w3-left w3-hover-text-black" onclick="plusDivs(-1)">&#10094;</div>
+            <div class="w3-right w3-hover-text-black" onclick="plusDivs(1)">&#10095;</div>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-black" onclick="currentDiv(1)"></span>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-black" onclick="currentDiv(2)"></span>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-black" onclick="currentDiv(3)"></span>
+        </div>
+    </div>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3000);
+        }
+
+
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-white";
+        }
+    </script>
+</body>
+
+</html>
